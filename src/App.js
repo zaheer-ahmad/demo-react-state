@@ -20,7 +20,6 @@ function App() {
       setAge(++age);
     }}>Increment Age</button>
     </div>
-    
   );
 }
 
