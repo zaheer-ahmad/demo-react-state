@@ -1,25 +1,26 @@
-import React from 'react';
+import React, { useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
 function App() {
+
+  let [lit,setLit] = useState(false);
+  let [age,setAge] = useState(23);
+  function updateLight()
+  {
+    setLit(!lit);
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <p>Current light mode is {lit?'light':'dark'}</p>
+      <p>Age is {age}</p>
+      <br/>
+    <button onClick={updateLight}>Toggle Light</button>
+    <button onClick={()=>{
+      setAge(++age);
+    }}>Increment Age</button>
     </div>
+    
   );
 }
 
